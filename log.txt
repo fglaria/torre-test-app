@@ -1,0 +1,4 @@
+- 21 17:00
+    created basic express app
+    fetch user info via /users/id and displayed name on user view
+    
