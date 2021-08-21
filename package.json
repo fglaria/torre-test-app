@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fglaria/torre-test-app/issues"
   },
-  "homepage": "https://github.com/fglaria/torre-test-app#readme"
+  "homepage": "https://github.com/fglaria/torre-test-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
