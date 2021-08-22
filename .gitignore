@@ -5,9 +5,16 @@ Icon?
 backend/.DS_Store*
 backend/Icon?
 backend/._*
+client/.DS_Store*
+client/Icon?
+client/._*
 
 # npm
 backend/node_modules
 backend/package-lock.json
 backend/*.log
 backend/*.gz
+client/node_modules
+client/package-lock.json
+client/*.log
+client/*.gz
