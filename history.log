@@ -21,4 +21,6 @@
         Displaying user name, thumbnail & links.
         Catching no person result from backend.
         Preventing empty queries to backend.
-    
+- 22 19:00
+    Client:
+        Added Accordion to display user info.
