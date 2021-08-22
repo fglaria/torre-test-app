@@ -22,5 +22,6 @@
         Catching no person result from backend.
         Preventing empty queries to backend.
 - 22 19:00
-    Client:
-        Added Accordion to display user info.
+    Client: Added Accordion to display user info.
+- 22 19:30
+    Client: Added display sevice to show user & job info.

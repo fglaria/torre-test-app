@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Alert, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import BeatLoader from 'react-spinners/BeatLoader';
 
 import * as QueryService from '../services/queryService';
+import * as DisplayService from '../services/displayService';
 
 const useMergingState = initialState => {
   const [state, _setState] = useState(initialState);
@@ -57,53 +58,15 @@ const Main = () => {
       switch (query.type)
       {
         case 'users':
-          return showUserInfo();
+          return DisplayService.showUser(info);
         case 'jobs':
-          return showJobInfo();
+          return DisplayService.showJob(info);
         default:
-          return showError();
+          return setError('No valid type');
       }
     }
   };
 
-  const showUserInfo = () => {
-    console.log(info);
-    return (
-      <div class="mt-3">
-        <img src={ info.person.pictureThumbnail } alt=''></img>
-        <p>{ info.person.name }</p>
-        <Accordion defaultActiveKey="0" >
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Information</Accordion.Header>
-            <Accordion.Body>
-              <p>{ info.person.professionalHeadline }</p>
-              <p>{ info.person.location.name }</p>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Links</Accordion.Header>
-            <Accordion.Body>
-              {
-                info.person.links.map((l, index) =>
-                  <p key={ index }>
-                    <a href={ l.address }>{ l.name }</a>
-                  </p>
-                )
-              }
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-      </div>
-    );
-  };
-
-  const showJobInfo = () => {
-    console.log("job info");
-  };
-
-  const showError = () => {
-    setError('No valid type');
-  };
 
   return (
     <div class="text-center">
