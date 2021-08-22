@@ -3,5 +3,7 @@
     fetch user info via /users/id and displayed name on user view
 - 21 21:00
     understanding POST queries, and fetching users info
-
+- 21 22:00
+    moved backend to backend/ folder
+    created client/ folder for frontend
     
