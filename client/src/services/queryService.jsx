@@ -1,26 +1,30 @@
 const server_url = 'http://localhost:9000';
 
 const getUser = user => {
-  console.log("USER: " + user);
   fetch(`${ server_url }/users/${ user }`, {
     method: 'GET',
   })
   .then(res => res.json())
-  .then(body => checkUser(body));
+  .then(body => checkResponse(body));
 };
 
 const getJob = job => {
   console.log("JOB: " + job);
+  fetch(`${ server_url }/jobs/${ job }`, {
+    method: 'GET',
+  })
+  .then(res => res.json())
+  .then(body => checkResponse(body));
 };
 
-const checkUser = user => {
-  if ("011002" === user.code)
+const checkResponse = res => {
+  if ("011002" === res.code)
   {
-    console.error(user.message);
+    console.error(res.message);
     return;
   }
 
-  console.log(user);
+  console.log(res);
 }
 
 export const send = query => {
