@@ -25,3 +25,5 @@
     Client: Added Accordion to display user info.
 - 22 19:30
     Client: Added display sevice to show user & job info.
+- 22 19:50
+    Backend: Fixed API to fetch jobs by id.
