@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Container, Row, Col, Form, Button} from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 import * as QueryService from '../services/queryService';
 
@@ -15,15 +16,78 @@ const useMergingState = initialState => {
 };
 
 const Main = () => {
+  const [isFetching, setIsFetching] = useState(false);
+  const [info, setInfo] = useState(false);
+  const [error, setError] = useState('');
 
   const [query, setQuery] = useMergingState({
     text: '',
     type: 'users',
   });
 
+  const clear = () => {
+    setInfo(false);
+    setError('');
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
-    QueryService.send(query);
+
+    if ('' !== query.text) {
+      setIsFetching(true);
+
+      QueryService.send(query)
+      .then(q => {
+        setIsFetching(false);
+        setInfo(q);
+      })
+      .catch(e => {
+        setIsFetching(false);
+        setError(e);
+      });
+    }
+    else {
+      setError('No query');
+    }
+  };
+
+  const showInfo = () => {
+    if (info)
+    {
+      switch (query.type)
+      {
+        case 'users':
+          return showUserInfo();
+        case 'jobs':
+          return showJobInfo();
+        default:
+          return showError();
+      }
+    }
+  };
+
+  const showUserInfo = () => {
+    return (
+      <div class="mt-3">
+        <img src={ info.person.pictureThumbnail } alt=''></img>
+        <p>{ info.person.name }</p>
+        {
+          info.person.links.map((l, index) =>
+            <p>
+              <a href={ l.address }>{ l.name }</a>
+            </p>
+          )
+        }
+      </div>
+    );
+  };
+
+  const showJobInfo = () => {
+    console.log("job info");
+  };
+
+  const showError = () => {
+    setError('No valid type');
   };
 
   return (
@@ -32,13 +96,13 @@ const Main = () => {
       <Container class="mt-2" fluid>
         <Form onSubmit={ onSubmit }>
           <Row>
-            <Col>
-              <Form.Control lg={10} type="text" placeholder="Search here..." 
-                onChange={({ target: { value } }) => setQuery({ text: value })}/>
+            <Col xxl={10} xl={10} lg={8} md={8} sm={8} xs={6}>
+              <Form.Control type="text" placeholder="Search here..." 
+                onChange={({ target: { value } }) => {setQuery({ text: value }); clear();}}/>
             </Col>
             <Col>
             <Form.Select 
-              onChange={({ target: { value } }) => setQuery({ type: value })}>
+              onChange={({ target: { value } }) => {setQuery({ type: value }); ; clear();}}>
               <option value="users">Users</option>
               <option value="jobs">Jobs</option>
             </Form.Select>
@@ -50,6 +114,24 @@ const Main = () => {
             </Col>
           </Row>
         </Form>
+      </Container>
+
+      <Container class="mt-3">
+        <Row>
+          <BeatLoader size={40} color={"#000000"} loading={ isFetching } />
+          {
+            !isFetching &&
+            showInfo()
+          }
+          {
+            ('' !== error) &&
+            <div class="mt-5">
+              <Alert variant="danger">
+                { error }
+              </Alert>
+            </div>
+          }
+        </Row>
       </Container>
     </div>
   );

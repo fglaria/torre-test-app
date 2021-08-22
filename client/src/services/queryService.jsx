@@ -1,7 +1,7 @@
 const server_url = 'http://localhost:9000';
 
 const getUser = user => {
-  fetch(`${ server_url }/users/${ user }`, {
+  return fetch(`${ server_url }/users/${ user }`, {
     method: 'GET',
   })
   .then(res => res.json())
@@ -10,7 +10,7 @@ const getUser = user => {
 
 const getJob = job => {
   console.log("JOB: " + job);
-  fetch(`${ server_url }/jobs/${ job }`, {
+  return fetch(`${ server_url }/jobs/${ job }`, {
     method: 'GET',
   })
   .then(res => res.json())
@@ -21,20 +21,18 @@ const checkResponse = res => {
   if ("011002" === res.code)
   {
     console.error(res.message);
-    return;
+    throw (res.message);
   }
 
-  console.log(res);
+  return res;
 }
 
 export const send = query => {
   switch (query.type) {
     case "users":
-      getUser(query.text);
-      break;
+      return getUser(query.text);
     case "jobs":
-      getJob(query.text);
-      break;
+      return getJob(query.text);
     default:
       console.error("No valid type selected: " + query.type);
       break;
