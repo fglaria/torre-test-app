@@ -16,4 +16,9 @@
     Backend: added api for jobs queries via id 
         (Not working yet because incorrect use of id).
     Client: added query service for jobs.
+- 22 18:45
+    Client:
+        Displaying user name, thumbnail & links.
+        Catching no person result from backend.
+        Preventing empty queries to backend.
     
