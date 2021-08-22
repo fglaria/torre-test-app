@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   fetch('https://github.com/')
-    .then(res => res.text())
+    .then(res => res.json())
     .then(body => console.log(body));
   res.send('respond with a resource');
 });
@@ -15,7 +15,7 @@ router.get('/:id', function(req, res, next) {
   // res.render('user', { id: req.params.id });
   fetch('https://torre.bio/api/bios/' + req.params.id)
     .then(res => res.json())
-    .then(body => res.render('user', { id: body.person.name }));
+    .then(body => res.send(body));
 });
 
 router.get('/search/:param', function(req, res, next) {
