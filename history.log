@@ -12,4 +12,8 @@
     first fetchs from client to backend, testing user query by id
 - 22 14:25
     successfully querying user from client to backend by id
+- 22 14:55
+    Backend: added api for jobs queries via id 
+        (Not working yet because incorrect use of id).
+    Client: added query service for jobs.
     
