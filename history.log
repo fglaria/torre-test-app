@@ -8,6 +8,8 @@
     created client/ folder for frontend
 - 22 12:00
     created main route & form for search on client
-
-
+- 22 14:00
+    first fetchs from client to backend, testing user query by id
+- 22 14:25
+    successfully querying user from client to backend by id
     
