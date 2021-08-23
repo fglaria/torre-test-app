@@ -29,3 +29,5 @@
     Backend: Fixed API to fetch jobs by id.
 - 22 21:30
     Client: Displaying job basic info.
+- 22 23:50
+    Client: Adding more info for users.

@@ -3,7 +3,9 @@ import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import BeatLoader from 'react-spinners/BeatLoader';
 
 import * as QueryService from '../services/queryService';
-import * as DisplayService from '../services/displayService';
+import * as DisplayUserService from '../services/displayUserService';
+import * as DisplayJobService from '../services/displayJobService';
+
 
 const useMergingState = initialState => {
   const [state, _setState] = useState(initialState);
@@ -58,9 +60,9 @@ const Main = () => {
       switch (query.type)
       {
         case 'users':
-          return DisplayService.showUser(info);
+          return DisplayUserService.show(info);
         case 'jobs':
-          return DisplayService.showJob(info);
+          return DisplayJobService.show(info);
         default:
           return setError('No valid type');
       }
