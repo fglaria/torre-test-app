@@ -75,14 +75,14 @@ const Main = () => {
         <Form onSubmit={ onSubmit }>
           <Row>
             <Col xxl={10} xl={10} lg={8} md={8} sm={8} xs={6}>
-              <Form.Control type="text" placeholder="Search here..." 
+              <Form.Control type="text" placeholder="Search here by ID..." 
                 onChange={({ target: { value } }) => {setQuery({ text: value }); clear();}}/>
             </Col>
             <Col>
             <Form.Select 
               onChange={({ target: { value } }) => {setQuery({ type: value }); ; clear();}}>
-              <option value="users">Users</option>
-              <option value="jobs">Jobs</option>
+              <option value="users">User</option>
+              <option value="jobs">Job</option>
             </Form.Select>
             </Col>
             <Col>
