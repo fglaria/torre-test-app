@@ -31,3 +31,5 @@
     Client: Displaying job basic info.
 - 22 23:50
     Client: Adding more info for users.
+- 23 18:00
+    Client: Added Navbar and 3 navlinks, to search using ID or for users or jobs.
