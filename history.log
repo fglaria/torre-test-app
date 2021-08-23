@@ -27,3 +27,5 @@
     Client: Added display sevice to show user & job info.
 - 22 19:50
     Backend: Fixed API to fetch jobs by id.
+- 22 21:30
+    Client: Displaying job basic info.
