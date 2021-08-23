@@ -1,11 +1,11 @@
 import { Col, Accordion } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/jobs.css';
+import '../styles/images.css';
 
 
 export const show = (jobResult) => {
-    console.log(jobResult);
+    // console.log(jobResult);
     const job = jobExtractInfo(jobResult);
   
     return (
@@ -13,7 +13,7 @@ export const show = (jobResult) => {
         {
           job.organizationsImg.map((o, index) => 
             <Col key={ index }>
-              <img src={ o.picture } class="organization" alt={ o.name } rounded="true"></img>
+              <img src={ o.picture } class="thumbnail" alt={ o.name } rounded="true"></img>
             </Col>
           )
         }

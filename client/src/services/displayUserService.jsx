@@ -1,14 +1,15 @@
 import { Accordion } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/images.css';
 
 export const show = (userResult) => {
-  console.log(userResult);
+  // console.log(userResult);
   const user = userExtractInfo(userResult);
 
   return (
     <div class="mt-3 mb-5">
-      <img src={ user.thumbnail } alt='' rounded="true"></img>
+      <img src={ user.thumbnail } class="thumbnail" alt='' rounded="true"></img>
       <p>{ user.name }</p>
       <Accordion defaultActiveKey="0" >
         <Accordion.Item eventKey="0">
