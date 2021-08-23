@@ -18,7 +18,7 @@ const useMergingState = initialState => {
   return [state, setState];
 };
 
-const Main = () => {
+const SearchByID = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [info, setInfo] = useState(false);
   const [error, setError] = useState('');
@@ -72,7 +72,7 @@ const Main = () => {
 
   return (
     <div class="text-center">
-      <h2 class="mt-3">Torre Test App</h2>
+      <h2 class="mt-3">Search User/Job by ID</h2>
       <Container class="mt-2" fluid>
         <Form onSubmit={ onSubmit }>
           <Row>
@@ -117,4 +117,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default SearchByID;
