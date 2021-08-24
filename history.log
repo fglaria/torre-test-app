@@ -39,3 +39,5 @@
 - 23 21:20
     Backend: Added API for POST queries for users & jobs.
         (offset not clear how it works).
+- 23 22:30
+    Client: Added Search Users & Jobs using backend API POST.
