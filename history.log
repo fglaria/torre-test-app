@@ -36,3 +36,6 @@
 - 23 20:20
     Backend: Fixed invalid fetch for invalid job code, catching error.
     Client: Checking job error "invalid-json" and throwing message.
+- 23 21:20
+    Backend: Added API for POST queries for users & jobs.
+        (offset not clear how it works).
