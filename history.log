@@ -1,52 +1,54 @@
-- 21 17:00
+- 2021-08-21 17:00
     created basic express app
     fetch user info via /users/id and displayed name on user view
-- 21 21:00
+- 2021-08-21 21:00
     understanding POST queries, and fetching users info
-- 21 22:00
+- 2021-08-21 22:00
     moved backend to backend/ folder
     created client/ folder for frontend
-- 22 12:00
+- 2021-08-22 12:00
     created main route & form for search on client
-- 22 14:00
+- 2021-08-22 14:00
     first fetchs from client to backend, testing user query by id
-- 22 14:25
+- 2021-08-22 14:25
     successfully querying user from client to backend by id
-- 22 14:55
+- 2021-08-22 14:55
     Backend: added api for jobs queries via id 
         (Not working yet because incorrect use of id).
     Client: added query service for jobs.
-- 22 18:45
+- 2021-08-22 18:45
     Client:
         Displaying user name, thumbnail & links.
         Catching no person result from backend.
         Preventing empty queries to backend.
-- 22 19:00
+- 2021-08-22 19:00
     Client: Added Accordion to display user info.
-- 22 19:30
+- 2021-08-22 19:30
     Client: Added display sevice to show user & job info.
-- 22 19:50
+- 2021-08-22 19:50
     Backend: Fixed API to fetch jobs by id.
-- 22 21:30
+- 2021-08-22 21:30
     Client: Displaying job basic info.
-- 22 23:50
+- 2021-08-22 23:50
     Client: Adding more info for users.
-- 23 18:00
+- 2021-08-23 18:00
     Client: Added Navbar and 3 navlinks, to search using ID or for users or jobs.
-- 23 20:20
+- 2021-08-23 20:20
     Backend: Fixed invalid fetch for invalid job code, catching error.
     Client: Checking job error "invalid-json" and throwing message.
-- 23 21:20
+- 2021-08-23 21:20
     Backend: Added API for POST queries for users & jobs.
         (offset not clear how it works).
-- 23 22:30
+- 2021-08-23 22:30
     Client: Added Search Users & Jobs using backend API POST.
-- 23 23:30
+- 2021-08-23 23:30
     Client: Showing users username & jobs id.
-- 24 03:40
+- 2021-08-24 03:40
     Backend: 
         Moved files & folders to root directory, to work easily with Heroku.
         Added heroku post-build for building client.
         Added use static files from client build folder.
     Client:
         Added proxy to backend for compatibility with Heroku.
+- 2021-08-24 03:55
+    App working in Heroku at https://torre-test-app.herokuapp.com/
