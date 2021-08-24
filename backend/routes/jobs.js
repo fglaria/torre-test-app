@@ -9,7 +9,8 @@ router.get('/:id', function(req, res, next) {
   console.log(`${api_url}${req.params.id}`);
   fetch(`${api_url}${req.params.id}`)
     .then(res => res.json())
-    .then(body => res.send(body));
+    .then(body => res.send(body))
+    .catch(error => res.send(error));
 });
 
 module.exports = router;

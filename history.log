@@ -33,3 +33,6 @@
     Client: Adding more info for users.
 - 23 18:00
     Client: Added Navbar and 3 navlinks, to search using ID or for users or jobs.
+- 23 20:20
+    Backend: Fixed invalid fetch for invalid job code, catching error.
+    Client: Checking job error "invalid-json" and throwing message.

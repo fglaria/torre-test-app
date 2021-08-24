@@ -18,9 +18,12 @@ const getJob = job => {
 };
 
 const checkResponse = res => {
+  console.log(res);
   if ("011002" === res.code)
   {
-    console.error(res.message);
+    throw (res.message);
+  }
+  else if ("invalid-json" === res.type) {
     throw (res.message);
   }
 

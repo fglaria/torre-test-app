@@ -6,9 +6,6 @@ const api_url = "https://torre.bio/api/bios/";
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  fetch('https://github.com/')
-    .then(res => res.json())
-    .then(body => console.log(body));
   res.send('respond with a resource');
 });
 
