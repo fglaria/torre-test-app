@@ -41,3 +41,5 @@
         (offset not clear how it works).
 - 23 22:30
     Client: Added Search Users & Jobs using backend API POST.
+- 23 23:30
+    Client: Showing users username & jobs id.
