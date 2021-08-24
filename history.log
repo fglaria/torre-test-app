@@ -43,3 +43,10 @@
     Client: Added Search Users & Jobs using backend API POST.
 - 23 23:30
     Client: Showing users username & jobs id.
+- 24 03:40
+    Backend: 
+        Moved files & folders to root directory, to work easily with Heroku.
+        Added heroku post-build for building client.
+        Added use static files from client build folder.
+    Client:
+        Added proxy to backend for compatibility with Heroku.

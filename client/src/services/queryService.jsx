@@ -1,7 +1,6 @@
-const server_url = 'http://localhost:9000';
 
 const getUser = user => {
-  return fetch(`${ server_url }/users/${ user }`, {
+  return fetch(`/users/${ user }`, {
     method: 'GET',
   })
   .then(res => res.json())
@@ -10,7 +9,7 @@ const getUser = user => {
 
 const getJob = job => {
   console.log("JOB: " + job);
-  return fetch(`${ server_url }/jobs/${ job }`, {
+  return fetch(`/jobs/${ job }`, {
     method: 'GET',
   })
   .then(res => res.json())
@@ -19,7 +18,7 @@ const getJob = job => {
 
 const postUser = q => {
   const a = q.aggregate ? "true" : "false";
-  return fetch(`${ server_url }/users/size/${ q.size }/offset/${ q.offset }/aggregate/${ a }`, {
+  return fetch(`/users/size/${ q.size }/offset/${ q.offset }/aggregate/${ a }`, {
     method: 'GET',
   })
   .then(res => res.json())
@@ -28,7 +27,7 @@ const postUser = q => {
 
 const postJobs = q => {
   const a = q.aggregate ? "true" : "false";
-  return fetch(`${ server_url }/jobs/size/${ q.size }/offset/${ q.offset }/aggregate/${ a }`, {
+  return fetch(`/jobs/size/${ q.size }/offset/${ q.offset }/aggregate/${ a }`, {
     method: 'GET',
   })
   .then(res => res.json())
